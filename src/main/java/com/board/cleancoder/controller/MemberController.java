@@ -77,4 +77,11 @@ public class MemberController {
 		
 		return "common/redirect";
 	}
+	
+	@RequestMapping("/member/doLogout")
+	public String doLogout(HttpSession session) {
+		session.removeAttribute("uno");
+		
+		return "redirect:/";
+	}
 }

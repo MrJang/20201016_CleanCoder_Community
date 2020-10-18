@@ -1,8 +1,8 @@
 package com.board.cleancoder.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
-import org.springframework.beans.factory.annotation.Autowired;
+ 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,21 +17,8 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class HomeController {
 	
-	@Autowired
-	MemberService memberService;
-	
 	@RequestMapping("/home/main")
-    public String showMain(HttpSession session, Model mModel) {
-		long uno = 0;
-		
-		if(session.getAttribute("uno") != null) {
-			uno = (long) session.getAttribute("uno");
-		}
-		
-		Member loginedMember = memberService.get(uno);
-		
-		mModel.addAttribute("loginedMember", loginedMember);
-		
+    public String showMain(Model mModel) {
 		return "home/main";
 	}
 	@RequestMapping("/")

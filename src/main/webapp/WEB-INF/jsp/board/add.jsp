@@ -52,7 +52,7 @@
 						작성
 				</span>
 				<div>
-					<input name = "uno" type = "hidden" value = 1 ><!-- 나중에 회원번호로 대치 -->
+					<input name = "uno" type = "hidden" value = '${uno}'><!-- 나중에 회원번호로 대치 -->
 					<input type = "submit" value = "작성"> <input type = "reset" value = "취소" onclick = "history.back();">
 				</div>
 			</div>
