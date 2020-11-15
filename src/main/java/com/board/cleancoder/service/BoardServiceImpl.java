@@ -24,11 +24,11 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
-	public long add(Map<String, Object> param) {
-		boardDao.add(param);
+	public long add(Board board) {
+		boardDao.add(board);
 		
 		
-		return CUtil.getAsLong(param.get("bno"));
+		return CUtil.getAsLong(board.getBno());
 	}
 
 	@Override
@@ -49,8 +49,8 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
-	public void modify(Map<String, Object> param) {
-		boardDao.modify(param);
+	public void modify(Board board) {
+		boardDao.modify(board);
 	}
 
 	@Override

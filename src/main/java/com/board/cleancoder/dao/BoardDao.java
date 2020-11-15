@@ -10,7 +10,7 @@ import com.board.cleancoder.dto.Board;
 public interface BoardDao {
 	public List<Board> getList();
 
-	public void add(Map<String, Object> param);
+	public void add(Board board);
 
 	public int getTotalCount();
 
@@ -18,7 +18,7 @@ public interface BoardDao {
 
 	public void delete(long bno);
 
-	public void modify(Map<String, Object> param);
+	public void modify(Board  board);
 
 	public void hitUp(long bno);
 	

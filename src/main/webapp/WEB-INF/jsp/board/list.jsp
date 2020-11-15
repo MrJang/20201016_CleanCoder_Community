@@ -11,7 +11,7 @@
 		<div class = "con">
 			<c:forEach items = "${list}" var = "board">
 				<section> 
-				<a href = "./detail?bno=${board.bno}">번호 : ${board.bno}, 제목 : ${board.title}, 조회수 : ${board.hit}</a> 
+				<a href = "./detail/${board.bno}">번호 : ${board.bno}, 제목 : ${board.title}, 조회수 : ${board.hit}</a> 
 				</section>
 				<hr>
 			</c:forEach>
