@@ -9,18 +9,18 @@
 <script>
 	function submitLoginForm(form){
 		
-		form.userId.value = form.userId.value.trim();
-		if(form.userId.value.length == 0){
+		form.id.value = form.id.value.trim();
+		if(form.id.value.length == 0){
 			alert('ID를 입력해주세요.');
-			form.userId.focus();
+			form.id.focus();
 
 			return false;
 		}
 
-		form.userPw.value = form.userPw.value.trim();
-		if(form.userPw.value.length == 0){
+		form.pw.value = form.pw.value.trim();
+		if(form.pw.value.length == 0){
 			alert('PW를 입력해주세요.');
-			form.userPw.focus();
+			form.pw.focus();
 
 			return false;
 		}
@@ -35,7 +35,7 @@
 			ID 
 		</span>
 		<div>
-			<input name = "userId" type = "text" placeholder = "ID" autofocus = "autofocus" maxlength = "30">
+			<input name = "id" type = "text" placeholder = "ID" autofocus = "autofocus" maxlength = "30">
 		</div>
 	</div>
 	
@@ -44,7 +44,7 @@
 			PW 
 		</span>
 		<div>
-			<input name = "userPw" type = "password" placeholder = "PW" autofocus = "autofocus" maxlength = "30">
+			<input name = "pw" type = "password" placeholder = "PW" autofocus = "autofocus" maxlength = "30">
 		</div>
 	</div>
 	

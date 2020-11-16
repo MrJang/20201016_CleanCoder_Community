@@ -5,22 +5,22 @@
 		<select id = "getUserIdDupCount" parameterType = "String" resultType = "int">
 			SELECT COUNT(*)
 			FROM member_tbl
-			WHERE id = #{userId}
+			WHERE id = #{id}
 		</select>
 		
 		<insert id = "join" parameterType = "map" useGeneratedKeys = "true" keyProperty = "uno">
 			INSERT INTO member_tbl
-			SET id = #{userId},
-			pw = #{userPw},
-			name = #{userName},
-			usertype = #{userType}
+			SET id = #{id},
+			pw = #{pw},
+			name = #{name},
+			usertype = #{usertype}
 		</insert>
 		
 		<select id = "getMatchedOne" parameterType = "String" resultType = "Member">
 			SELECT *
 			FROM member_tbl
-			WHERE id = #{userId}
-			AND pw = #{userPw}
+			WHERE id = #{id}
+			AND pw = #{pw}
 		</select>
 		
 		<select id = "get" parameterType = "long" resultType = "Member">

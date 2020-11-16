@@ -1,7 +1,6 @@
 package com.board.cleancoder.service;
 
 import java.util.List;
-import java.util.Map;
 
 import com.board.cleancoder.dto.Board;
 

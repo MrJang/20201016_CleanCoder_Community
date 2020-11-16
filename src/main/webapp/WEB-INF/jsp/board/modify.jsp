@@ -28,7 +28,7 @@
 			form.submit();
 		}
 		</script>
-		<form class = "con common-form" action = "./doModify" method = "POST" onsubmit = "submitModifyForm(this); return false;">
+		<form class = "con common-form" action = "/board/doModify" method = "POST" onsubmit = "submitModifyForm(this); return false;">
 			<input type = "hidden" name = "bno" value = "${board.bno}">
 			<div>
 				<span>

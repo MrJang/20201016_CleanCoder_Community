@@ -1,8 +1,6 @@
 package com.board.cleancoder.service;
-import java.math.BigInteger;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,7 +9,6 @@ import com.board.cleancoder.dao.BoardDao;
 import com.board.cleancoder.dto.Board;
 import com.board.cleancoder.util.CUtil;
 
-import jline.internal.Log;
 
 @Service
 public class BoardServiceImpl implements BoardService{

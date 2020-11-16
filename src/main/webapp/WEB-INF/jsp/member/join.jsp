@@ -6,45 +6,45 @@
 		
 		<script>
 		 function submitJoinForm(form){
-			form.userId.value = form.userId.value.trim();
+			form.id.value = form.id.value.trim();
 
-			if(form.userId.value.length == 0){
+			if(form.id.value.length == 0){
 				alert('ID를 입력해주세요.');
-				form.userId.focus();
+				form.id.focus();
 				
 				return false;
 			}
 
-			form.userPw.value = form.userPw.value.trim();
+			form.pw.value = form.pw.value.trim();
 
-			if(form.userPw.value.length == 0){
+			if(form.pw.value.length == 0){
 				alert('PW를 입력해주세요.');
-				form.userPw.focus();
+				form.pw.focus();
 				
 				return false;
 			}
 
-			form.userPwConfirm.value = form.userPwConfirm.value.trim();
+			form.pwConfirm.value = form.pwConfirm.value.trim();
 
-			if(form.userPwConfirm.value.length == 0){
+			if(form.pwConfirm.value.length == 0){
 				alert('PW 확인을 입력해주세요.');
-				form.userPwConfirm.focus();
+				form.pwConfirm.focus();
 				
 				return false;
 			}
 
-			if(form.userPwConfirm.value !=  form.userPw.value){
+			if(form.pwConfirm.value !=  form.pw.value){
 				alert('PW가 일치 하지안습니다.');
-				form.userPwConfirm.focus();
+				form.pwConfirm.focus();
 
 				return false;
 			}
 			
-			form.userName.value = form.userName.value.trim();
+			form.name.value = form.name.value.trim();
 
-			if(form.userName.value.length == 0){
+			if(form.name.value.length == 0){
 				alert('이름을 입력해주세요.');
-				form.userName.focus();
+				form.name.focus();
 				
 				return false;
 			}
@@ -59,7 +59,7 @@
 					ID
 				</span>
 				<div>
-					<input name = "userId" type = "text" placeholder = "ID" autofocus = "autofocus" maxlength = "30">
+					<input name = "id" type = "text" placeholder = "ID" autofocus = "autofocus" maxlength = "30">
 				</div>
 			</div>
 			
@@ -68,7 +68,7 @@
 					PW
 				</span>
 				<div>
-					<input name = "userPw" type = "password" placeholder = "PW" autofocus = "autofocus" maxlength = "30">
+					<input name = "pw" type = "password" placeholder = "PW" autofocus = "autofocus" maxlength = "30">
 				</div>
 			</div>
 			
@@ -77,7 +77,7 @@
 					PW확인
 				</span>
 				<div>
-					<input name = "userPwConfirm" type = "password" placeholder = "PW확인" autofocus = "autofocus" maxlength = "30">
+					<input name = "pwConfirm" type = "password" placeholder = "PW확인" autofocus = "autofocus" maxlength = "30">
 				</div>
 			</div>
 			
@@ -86,7 +86,7 @@
 					이름
 				</span>
 				<div>
-					<input name = "userName" type = "text" placeholder = "이름" autofocus = "autofocus" maxlength = "30">
+					<input name = "name" type = "text" placeholder = "이름" autofocus = "autofocus" maxlength = "30">
 				</div>
 			</div>
 			<div>
@@ -94,7 +94,7 @@
 					가입
 				</span>
 				<div>
-					<input name = "userType" type = "hidden" value = "N" >
+					<input name = "usertype" type = "hidden" value = "N" >
 					<input type = "submit" value = "가입"> <input type = "reset" value = "취소" onclick = "history.back();">
 				</div>
 			</div>

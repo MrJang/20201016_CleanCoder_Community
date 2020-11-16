@@ -19,8 +19,8 @@ public class MemberServiceImpl implements MemberService {
 	MemberDao memberDao;
 	
 	@Override
-	public Map<String, Object> checkUserIdDup(String userId) {
-		int count = memberDao.getUserIdDupCount(userId);
+	public Map<String, Object> checkUserIdDup(String id) {
+		int count = memberDao.getUserIdDupCount(id);
 		
 		String resultCode = "";
 		String msg = "";
@@ -41,11 +41,11 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public Map<String, Object> join(Map<String, Object> param) {
+	public Map<String, Object> join(Member member) {
 		
-		memberDao.join(param);
+		memberDao.join(member);
 		
-		long newId = CUtil.getAsLong(param.get("id"));
+		long newId = CUtil.getAsLong(member.getUno());
 		
 		String resultCode = "";
 		String msg = "";
@@ -67,9 +67,9 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public Member getMatchedOne(String userId, String userPw) {
+	public Member getMatchedOne(String id, String pw) {
 		
-		return memberDao.getMatchedOne(userId, userPw);
+		return memberDao.getMatchedOne(id, pw);
 	}
 
 	@Override

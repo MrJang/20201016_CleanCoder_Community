@@ -7,9 +7,10 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.board.cleancoder.dto.Member;
 import com.board.cleancoder.service.MemberService;
@@ -23,15 +24,13 @@ public class MemberController {
 	@Autowired
 	MemberService memberService;
 	
-	@RequestMapping("/member/join")
-	public String showJoin() {
-		return "member/join";
-	}
+	@GetMapping("/member/join")
+	public void join() {}
 	
-	@RequestMapping("/member/doJoin")
-	public String doJoin(@RequestParam Map<String, Object> param, Model mModel) {
+	@PostMapping("/member/doJoin")
+	public String doJoin(Member member, Model mModel) {
 		
-		 Map<String, Object> checkUserIdDupRs= memberService.checkUserIdDup((String) param.get("userId"));
+		 Map<String, Object> checkUserIdDupRs= memberService.checkUserIdDup((String) member.getId());
 		 
 		 if(((String)checkUserIdDupRs.get("resultCode")).startsWith("F-")){
 			 mModel.addAttribute("alertMsg", checkUserIdDupRs.get("msg"));
@@ -40,7 +39,7 @@ public class MemberController {
 			 return "common/redirect";
 		 }
 		 
-		 Map<String, Object> joinRs = memberService.join(param);
+		 Map<String, Object> joinRs = memberService.join(member);
 		 
 		 if(((String)joinRs.get("resultCode")).startsWith("F-")){
 			 	mModel.addAttribute("alertMsg", joinRs.get("msg"));
@@ -54,14 +53,12 @@ public class MemberController {
 		 return "common/redirect";
 	}
 	
-	@RequestMapping("/member/login")
-	public String showLogin() {
-		return "member/login";
-	}
+	@GetMapping("/member/login")
+	public void login() {}
 	
-	@RequestMapping("/member/doLogin")
-	public String doLogin(@RequestParam Map<String, Object> param, Model mModel, HttpSession session) {
-		Member matchedMember = memberService.getMatchedOne((String) param.get("userId"), (String) param.get("userPw"));
+	@PostMapping("/member/doLogin")
+	public String doLogin(Member member, Model mModel, HttpSession session) {
+		Member matchedMember = memberService.getMatchedOne(member.getId(), member.getPw());
 		
 		if(matchedMember == null) {
 			mModel.addAttribute("alertMsg", "일치하는 회원이 없거나, 아이디/패스워드가 바르지 못합니다.");

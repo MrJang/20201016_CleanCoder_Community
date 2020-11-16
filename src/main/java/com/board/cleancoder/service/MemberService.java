@@ -6,11 +6,11 @@ import com.board.cleancoder.dto.Member;
 
 public interface MemberService {
 
-	Map<String, Object> checkUserIdDup(String userId);
+	Map<String, Object> checkUserIdDup(String id);
 	
-	public Map<String, Object> join(Map<String, Object> param);
+	public Map<String, Object> join(Member member);
 	
-	public Member getMatchedOne(String userId, String userPw);
+	public Member getMatchedOne(String id, String pw);
 	
 	public Member get(long uno);
 }
