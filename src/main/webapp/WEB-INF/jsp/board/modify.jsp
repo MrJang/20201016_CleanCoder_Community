@@ -53,7 +53,7 @@
 						수정
 				</span>
 				<div>
-					<input name = "uno" type = "hidden" value = 1 ><!-- 나중에 회원번호로 대치 -->
+					<input name = "uno" type = "hidden" value = "${board.uno}" >
 					<input type = "submit" value = "수정"> <input type = "reset" value = "취소" onclick = "history.back();">
 				</div>
 			</div>

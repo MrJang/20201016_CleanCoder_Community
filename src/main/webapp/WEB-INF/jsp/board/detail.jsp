@@ -14,12 +14,14 @@
 	    </section>
 
 		<div class = "btns con">
-			<a href = "/board/list">게시물 리스트</a>
-			<a href = "/board/add">게시물 추가</a>
+			<a href = "/board/list">[게시물 리스트]</a>
+			<a href = "/board/add">[게시물 추가]</a>
+			
 			<c:if test = "${loginedMember.uno == board.uno}">
-				<a href = "/board/modify/${board.bno}">게시물 수정</a>
-				<a onclick = "if(confirm('삭제 하시겠습니까?') == false) return false"; href = "/board/doDelete/${board.bno}">게시물 삭제</a>
-			</c:if> 
+				<a href = "/board/modify/${board.bno}">[게시물 수정]</a>
+				<a onclick = "if(confirm('삭제 하시겠습니까?') == false) return false"; href = "/board/doDelete/${board.bno}">[게시물 삭제]</a>
+			</c:if>
+			 
 		</div>
 
 <%@ include file = "../part/foot.jspf" %>
