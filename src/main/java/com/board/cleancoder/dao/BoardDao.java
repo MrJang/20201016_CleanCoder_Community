@@ -4,14 +4,16 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 import com.board.cleancoder.dto.Board;
+import com.board.cleancoder.dto.Criteria;
 
 @Mapper
 public interface BoardDao {
-	public List<Board> getList();
+	
+	public List<Board> getListWithSearch(Criteria cri);
 
 	public void add(Board board);
-
-	public int getTotalCount();
+	
+	public int getTotalCount(Criteria cri);
 
 	public Board get(long bno);
 

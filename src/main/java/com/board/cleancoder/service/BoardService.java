@@ -3,13 +3,15 @@ package com.board.cleancoder.service;
 import java.util.List;
 
 import com.board.cleancoder.dto.Board;
+import com.board.cleancoder.dto.Criteria;
 
 public interface BoardService {
-	public List<Board> getList();
+	
+	public List<Board> getList(Criteria cri);
 
 	public long add(Board board);
 
-	public int getTotalCount();
+	public int getTotalCount(Criteria cri);
 
 	public Board get(long bno);
 

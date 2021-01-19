@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.board.cleancoder.dao.BoardDao;
 import com.board.cleancoder.dto.Board;
+import com.board.cleancoder.dto.Criteria;
 import com.board.cleancoder.util.CUtil;
 
 
@@ -14,24 +15,18 @@ import com.board.cleancoder.util.CUtil;
 public class BoardServiceImpl implements BoardService{
 	@Autowired
 	BoardDao boardDao;
-	
-	@Override
-	public List<Board> getList(){
-		return boardDao.getList();
-	}
 
 	@Override
 	public long add(Board board) {
 		boardDao.add(board);
-		
-		
+			
 		return CUtil.getAsLong(board.getBno());
 	}
 
 	@Override
-	public int getTotalCount() {
+	public int getTotalCount(Criteria cri) {
 
-		return boardDao.getTotalCount();
+		return boardDao.getTotalCount(cri);
 	}
 
 	@Override
@@ -53,5 +48,10 @@ public class BoardServiceImpl implements BoardService{
 	@Override
 	public void hitUp(long bno) {
 		boardDao.hitUp(bno);
+	}
+
+	@Override
+	public List<Board> getList(Criteria cri) {
+		return boardDao.getListWithSearch(cri);
 	}
 }

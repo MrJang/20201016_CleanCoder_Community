@@ -14,7 +14,7 @@
 	    </section>
 
 		<div class = "btns con">
-			<a href = "/board/list">[게시물 리스트]</a>
+			<a href = "/board/list">[게시물 목록]</a>
 			<a href = "/board/add">[게시물 추가]</a>
 			
 			<c:if test = "${loginedMember.uno == board.uno}">

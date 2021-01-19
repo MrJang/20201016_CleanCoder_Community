@@ -1,9 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD MAPPER 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace = "com.board.cleancoder.dao.BoardDao">
+		<sql id = "criteria">
+			<choose>
+							<when test = "type == 'T'.toString()">
+								WHERE title LIKE CONCAT('%', #{keyword}, '%')
+							</when>
+							<when test = "type == 'C'.toString()">
+								WHERE content LIKE CONCAT('%', #{keyword}, '%')
+							</when>
+							<when test = "type == 'TC'.toString()">
+								WHERE (title  LIKE CONCAT('%', #{keyword}, '%') OR content LIKE CONCAT('%', #{keyword}, '%'))
+							</when>
+							<otherwise>
+							</otherwise>
+			</choose>
+		</sql>
 		<select id = "getList" parameterType = "map" resultType = "Board">
 			SELECT * FROM board_tbl ORDER BY bno DESC
+		</select>	
+		
+		<select id = "getListWithSearch" parameterType = "map" resultType = "Board">
+				SELECT bno, uno, title, content, regdate, updatedate, hit FROM board_tbl	
+						<include refid = "criteria"></include>
+				ORDER BY bno DESC
 		</select>
 		
 		<select id = "get" parameterType = "long" resultType = "Board">
@@ -13,7 +34,8 @@
 		
 		<select id = "getTotalCount" parameterType = "map" resultType = "int">
 			SELECT COUNT(*)
-			FROM board_tbl
+			FROM board_tbl 
+						<include refid = "criteria"></include>
 		</select>
 		
 		<insert id = "add" parameterType = "map" useGeneratedKeys = "true"

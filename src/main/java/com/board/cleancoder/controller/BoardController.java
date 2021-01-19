@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.board.cleancoder.dto.Board;
+import com.board.cleancoder.dto.Criteria;
 import com.board.cleancoder.service.BoardService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -43,10 +44,13 @@ public class BoardController {
 	}
 	
 	@GetMapping("/board/list")
-	public void list(Model bModel) {
-		List<Board> list = boardService.getList();
-		int totalCount = boardService.getTotalCount();
+	public void list(Criteria cri, Model bModel) {
 		
+		List<Board> list = boardService.getList(cri);
+
+		int totalCount = boardService.getTotalCount(cri);
+		
+		bModel.addAttribute("Criteria", cri);
 		bModel.addAttribute("list", list);
 		bModel.addAttribute("totalCount", totalCount);
 	}
