@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.board.cleancoder.dto.Board;
 import com.board.cleancoder.dto.Criteria;
 import com.board.cleancoder.service.BoardService;
+import com.board.cleancoder.service.MemberService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -22,6 +23,9 @@ public class BoardController {
 
 	@Autowired
 	BoardService boardService;
+	
+	@Autowired
+	MemberService memberService;
 	
 	@RequestMapping("/board/detail/{bno}")
 	public String detail(Model bModel, @PathVariable("bno") long bno) {

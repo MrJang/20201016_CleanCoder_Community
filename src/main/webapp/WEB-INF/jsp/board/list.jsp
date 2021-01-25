@@ -23,10 +23,20 @@
 	    </form>
 		</div>
 		<div class = "con">
+			<div class = "theme">
+				<div class = "textNum">번호</div>
+				<div class = "title">제목</div>
+				<div class = "writer">작성자</div>
+				<div class = "hitNum">조회수</div>
+			</div>
+			
 			<c:forEach items = "${list}" var = "board">
-				<section> 
-				<a href = "./detail/${board.bno}">번호 : ${board.bno}, 제목 : ${board.title}, 조회수 : ${board.hit}</a> 
-				</section>
+				<div class = "item"> 
+						<div class = "textNum">${board.bno}</div>
+						<div class = "title"><a href = "./detail/${board.bno}">${board.title}</a> </div>
+						<div class = "writer"> ${board.writer}</div>
+						<div class = "hitNum">${board.hit}</div>
+				</div>
 				<hr>
 			</c:forEach>
 		</div>

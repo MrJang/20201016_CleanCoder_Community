@@ -22,7 +22,7 @@
 		</select>	
 		
 		<select id = "getListWithSearch" parameterType = "map" resultType = "Board">
-				SELECT bno, uno, title, content, regdate, updatedate, hit FROM board_tbl	
+				SELECT bno, uno, writer, title, content, regdate, updatedate, hit FROM board_tbl	
 						<include refid = "criteria"></include>
 				ORDER BY bno DESC
 		</select>
@@ -42,6 +42,7 @@
 		keyProperty = "bno">
 			INSERT INTO board_tbl
 			SET uno = #{uno}, 
+			writer = #{writer},
 			title = #{title},
 			content = #{content},
 			regdate = NOW(),

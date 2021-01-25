@@ -33,3 +33,108 @@
 	.top-menu-1  a::after{
 		content:"]";
 	}
+	
+	.theme{
+		width: 1000px;
+		height : 30px;
+		background-color : 	#E1E1E1;
+		margin-top : 5px;
+		
+	}
+	.item{
+		width: 1000px;
+		height : 30px;
+		margin-top : 5px;
+	}
+	.textNum{
+		width: 50px;
+		height : 30px;
+		float: left;
+		text-align: center;
+		margin-top: 5px;
+		margin-botton:5px;
+	}
+	
+	.title{
+		width: 700px;
+		height : 30px;
+		float: left;
+		text-align: center;
+		margin-top: 5px;
+		margin-botton:5px;
+	}
+	
+	.writer{
+		width: 200px;
+		height : 30px;
+		float: left;
+		text-align: center;
+		margin-top: 5px;
+		margin-botton:5px;
+	}
+	
+	.hitNum{
+		width: 50px;
+		height : 30px;
+		float: left;
+		text-align: center;
+		margin-top: 5px;
+		margin-botton:5px;
+	}
+	
+	.detail{
+		width : 1000px;
+		height : 1500px;
+		float : left;
+	}
+	
+	.titleTop{
+		width : 1000px;
+		height : 30px;
+		flaot : left;
+		background-color : 	#E1E1E1;
+		border-style: none none solid none;
+		border-color : gray;
+	}
+	
+	.articleNum{
+		width : 100px;
+		height : 30px;
+		float : left;
+		text-align: left;
+		margin-left: 10px;
+		margin-top: 5px;
+		margin-botton:5px;
+	}
+	
+	.articleTitle{
+		width : 890px;
+		height : 30px;
+		float : left;
+		text-align: center;
+		margin-top: 5px;
+		margin-botton:5px;
+	}
+	.articleHitNum{
+		width : 100px;
+		height : 30px;
+		float : left;
+		text-align: left;
+		margin-botton:5px;	
+	}
+	
+	.articleWriter{
+		width : 890px;
+		height : 30px;
+		float : left;
+		text-align: left;
+		margin-left: 10px;
+		margin-botton:5px;
+	}
+	
+	.articleContent{
+		width : 1000px;
+		height: 940px; 
+		float : left;
+		border-style : none none groove none;
+	}

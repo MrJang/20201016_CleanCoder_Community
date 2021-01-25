@@ -6,13 +6,19 @@
 <c:set var = "pageName" value = "게시물 상세보기"/>
 <%@ include file = "../part/head.jspf" %>
 		
-		<section class = "con"> 
-				번호 :  ${board.bno}
-				제목 :  ${board.title}
-				내용 :  ${board.content}
-				조회수 :  ${board.hit}
-	    </section>
-
+		<section class = "con">
+		<div class = "detail"> 
+			<div class = "titleTop">
+				<div class = "articleNum">글 번호 : ${board.bno}</div>
+				<div class = "articleTitle">제목 : ${board.title}</div>
+			</div>
+			<div class = "titleTop">	
+				<div class = "articleWriter">작성자 : ${board.writer }</div>
+				<div class =  "articleHitNum">조회수 : ${board.hit}</div>
+			</div>	
+				<div class = "articleContent">${board.content}</div>
+	    </div>
+		</section>
 		<div class = "btns con">
 			<a href = "/board/list">[게시물 목록]</a>
 			<a href = "/board/add">[게시물 추가]</a>
